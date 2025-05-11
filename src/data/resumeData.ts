@@ -59,13 +59,31 @@ export const projectsData = [
       "https://images.pexels.com/photos/5717492/pexels-photo-5717492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
+    id: "proj6",
+    title: "QuizAI",
+    technologies: [
+      "React.js",
+      "Vite",
+      "Bootstrap",
+      "Node.js",
+      "Express",
+      "Google Gemini API",
+    ],
+    description:
+      "Engineered a full-stack quiz platform using the Google Gemini API to generate semantically accurate questions from user-defined topics. Built with React (Hooks, Axios) and a Node.js/Express backend for API routing and prompt engineering. Features a responsive Bootstrap UI and real-time result visualization.",
+    demoUrl: "",
+    repoUrl: "https://github.com/curtischen03/QuizAI",
+    imageUrl:
+      "https://images.pexels.com/photos/5905704/pexels-photo-5905704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
     id: "proj1",
     title: "Personal Fitness Web App",
     technologies: ["React.js", "CSS", "HTML", "Firebase"],
     description:
       "Created a personal health web app allowing users to select customized workout plans and food recipes. Led the team and provided guidance to complete weekly deadlines following Agile Software Development principles.",
     demoUrl: "",
-    repoUrl: "",
+    repoUrl: "https://github.com/curtischen03/ADAPT",
     imageUrl:
       "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
   },
@@ -87,7 +105,7 @@ export const projectsData = [
     description:
       "Built a Python script automating the conversion of image files (JPEG, PNG) into PDFs and merging them. Added customizable features, enabling users to selectively delete modified files or clear all files post-processing.",
     demoUrl: "",
-    repoUrl: "",
+    repoUrl: "https://github.com/curtischen03/PDFMerger",
     imageUrl:
       "https://images.pexels.com/photos/3760529/pexels-photo-3760529.jpeg",
   },
@@ -98,7 +116,7 @@ export const projectsData = [
     description:
       "Implemented various data structures (linked lists, 2D arrays, stacks, classes) with several programming techniques to create a functional battleship game where players can play against another person or AI with varying difficulty levels.",
     demoUrl: "",
-    repoUrl: "",
+    repoUrl: "https://github.com/curtischen03/battleship",
     imageUrl:
       "https://images.pexels.com/photos/813011/pexels-photo-813011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -233,7 +251,7 @@ export const educationData = [
     location: "Los Angeles, CA",
     degree: "Bachelor's, Computer Science",
     graduationDate: "June 2025",
-    gpa: "3.873",
+    gpa: "3.89",
     courses: [
       "Algorithms",
       "Data Structures",
