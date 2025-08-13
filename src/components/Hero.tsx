@@ -46,13 +46,12 @@ const Hero = () => {
               </span>
             </h1>
             <h2 className="text-2xl sm:text-3xl font-medium text-gray-700 dark:text-gray-300">
-              Computer Science Student & Software Engineer
+              Software and Machine Learning Engineer
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-              A passionate developer studying at UCLA with experience in web
-              development, machine learning, and software engineering. Currently
-              seeking new opportunities to apply my skills and continue growing
-              as a developer.
+              A passionate developer with experience in web development, machine
+              learning, and software engineering. Currently pursuing a Masters
+              of Engineering Degree, specializing in AI, at UCLA.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
