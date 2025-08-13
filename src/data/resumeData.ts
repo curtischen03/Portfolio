@@ -3,8 +3,8 @@ export const experienceData = [
   {
     id: "exp1",
     title: "Software Engineer Intern",
-    company: "Rosemead Dental Laboratory Inc",
-    location: "Rosemead, CA, USA",
+    company: "Rosemead Dental Laboratory",
+    location: "CA, USA",
     period: "June 2024 - Present",
     responsibilities: [
       "Develop and build a comprehensive commerce website tailored to company's needs",
@@ -18,7 +18,7 @@ export const experienceData = [
     title: "Technology Intern",
     company: "Qing Hui Fu DDS Inc",
     location: "Alhambra, CA, USA",
-    period: "August 2023 - Present",
+    period: "August 2023 - September 2023",
     responsibilities: [
       "Developed and implemented technical solutions, including automating patient communications and optimizing data management processes, reducing administrative errors and enhancing clinic efficiency",
       "Provided IT support by conducting software updates and troubleshooting for over 20 machines weekly",
@@ -52,8 +52,8 @@ export const projectsData = [
       "Google Gemini 2.0 Flash API",
     ],
     description:
-      "Developed an intelligent file-querying web application that allows users to ask natural language questions about PDF contents in a directory and receive direct, AI-powered answers. Designed for fast document analysis with plans to support more file types and features like query history.",
-    demoUrl: "",
+      "Developed an intelligent file-querying web application that allows users to ask natural language questions about PDF contents in a directory and receive direct, AI-powered answers.",
+    demoUrl: "https://www.youtube.com/watch?v=gY3hlbRXSh8",
     repoUrl: "https://github.com/curtischen03/AskDirectory",
     imageUrl:
       "https://images.pexels.com/photos/5717492/pexels-photo-5717492.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -71,7 +71,7 @@ export const projectsData = [
     ],
     description:
       "Engineered a full-stack quiz platform using the Google Gemini API to generate semantically accurate questions from user-defined topics. Built with React (Hooks, Axios) and a Node.js/Express backend for API routing and prompt engineering. Features a responsive Bootstrap UI and real-time result visualization.",
-    demoUrl: "",
+    demoUrl: "https://www.youtube.com/watch?v=lY8MTFlNfO0",
     repoUrl: "https://github.com/curtischen03/QuizAI",
     imageUrl:
       "https://images.pexels.com/photos/5905704/pexels-photo-5905704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -82,7 +82,7 @@ export const projectsData = [
     technologies: ["React.js", "CSS", "HTML", "Firebase"],
     description:
       "Created a personal health web app allowing users to select customized workout plans and food recipes. Led the team and provided guidance to complete weekly deadlines following Agile Software Development principles.",
-    demoUrl: "",
+    demoUrl: "https://curtischen03.github.io/ADAPT/",
     repoUrl: "https://github.com/curtischen03/ADAPT",
     imageUrl:
       "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg",
@@ -97,28 +97,6 @@ export const projectsData = [
     repoUrl: "",
     imageUrl:
       "https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg",
-  },
-  {
-    id: "proj3",
-    title: "PDF File Converter and Merger",
-    technologies: ["Python", "File Management"],
-    description:
-      "Built a Python script automating the conversion of image files (JPEG, PNG) into PDFs and merging them. Added customizable features, enabling users to selectively delete modified files or clear all files post-processing.",
-    demoUrl: "",
-    repoUrl: "https://github.com/curtischen03/PDFMerger",
-    imageUrl:
-      "https://images.pexels.com/photos/3760529/pexels-photo-3760529.jpeg",
-  },
-  {
-    id: "proj4",
-    title: "Battleship Project",
-    technologies: ["C++"],
-    description:
-      "Implemented various data structures (linked lists, 2D arrays, stacks, classes) with several programming techniques to create a functional battleship game where players can play against another person or AI with varying difficulty levels.",
-    demoUrl: "",
-    repoUrl: "https://github.com/curtischen03/battleship",
-    imageUrl:
-      "https://images.pexels.com/photos/813011/pexels-photo-813011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
 ];
 
@@ -258,10 +236,22 @@ export const educationData = [
       "Software Construction",
       "Computer Architecture",
       "Operating Systems",
-      "Multivariable Calculus",
       "Machine Learning",
       "Data Science",
       "Computer Vision",
+    ],
+  },
+  {
+    id: "edu1",
+    institution: "University of California",
+    location: "Los Angeles, CA",
+    degree: "Masters of Engineering, Specializing in AI",
+    gpa: "4.0",
+    graduationDate: "June 2027",
+    courses: [
+      "Neural Networks",
+      "Natural Language Processing",
+      "Machine Learning Algorithms",
     ],
   },
 ];
