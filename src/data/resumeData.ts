@@ -255,3 +255,21 @@ export const educationData = [
     ],
   },
 ];
+
+// Certifications Data
+export const certificationsData = [
+  {
+    id: "cert1",
+    name: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2025",
+    url: "https://www.credly.com/badges/304ed355-222d-405f-8aa2-53451a55ac00/public_url/",
+  },
+  {
+    id: "cert2",
+    name: "Full Stack Web Development",
+    issuer: "Udemy",
+    date: "2024",
+    url: "https://www.udemy.com/certificate/UC-90290584-c865-4d6a-af38-7ab116988660/",
+  },
+];
