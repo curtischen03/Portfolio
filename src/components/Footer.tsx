@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <h2 className="text-2xl font-bold text-blue-400">Curtis Chen</h2>
             <p className="text-gray-400 mt-2">
-              Computer Science Student & Software Engineer
+              Software and Machine Learning Engineer
             </p>
           </div>
 

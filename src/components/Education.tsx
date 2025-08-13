@@ -38,7 +38,7 @@ const Education = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle>Education</SectionTitle>
 
-        <div className="mt-12 max-w-4xl mx-auto">
+        <div className="mt-12 max-w-4xl mx-auto space-y-8">
           {educationData.map((edu) => (
             <div
               key={edu.id}

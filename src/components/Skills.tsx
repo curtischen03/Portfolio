@@ -37,34 +37,33 @@ const Skills = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle>Skills</SectionTitle>
 
-        <div className="mt-12 space-y-16">
-          {skillCategories.map((category) => (
-            <div key={category.id} className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                {category.name}
-              </h3>
+        <div className="mt-12 space-y-12">
+          {skillCategories.map((category) => {
+            const categorySkills = skillsData
+              .filter((skill) => skill.category === category.id)
+              .sort((a, b) => a.name.localeCompare(b.name));
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                {skillsData
-                  .filter((skill) => skill.category === category.id)
-                  .map((skill) => (
-                    <div
+            if (categorySkills.length === 0) return null;
+
+            return (
+              <div key={category.id} className="space-y-4">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                  {category.name}
+                </h3>
+
+                <div className="flex flex-wrap gap-3">
+                  {categorySkills.map((skill) => (
+                    <span
                       key={skill.id}
-                      className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg border border-gray-200 dark:border-gray-700 p-4 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 flex flex-col items-center text-center ring-1 ring-transparent hover:ring-blue-400/30"
+                      className="px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm font-medium text-gray-800 dark:text-gray-200 hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
                     >
-                      <div className="w-12 h-12 flex items-center justify-center mb-3">
-                        <div className={`text-2xl ${skill.iconColor}`}>
-                          {skill.icon}
-                        </div>
-                      </div>
-                      <h4 className="font-medium text-gray-900 dark:text-white">
-                        {skill.name}
-                      </h4>
-                    </div>
+                      {skill.name}
+                    </span>
                   ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
