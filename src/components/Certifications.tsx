@@ -42,7 +42,7 @@ const Certifications = () => {
           {certificationsData.map((cert) => (
             <div
               key={cert.id}
-              className="bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-600 p-6"
+              className="bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 dark:border-gray-600 p-6 hover:-translate-y-0.5 duration-300"
             >
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">

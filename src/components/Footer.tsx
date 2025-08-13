@@ -1,10 +1,10 @@
-import { Github as GitHub, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Github as GitHub, Linkedin, Mail, ExternalLink } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white py-12 border-t border-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
@@ -13,13 +13,13 @@ const Footer = () => {
               Computer Science Student & Software Engineer
             </p>
           </div>
-          
+
           <div className="flex gap-4">
             <a
               href="https://github.com/curtischen03"
               target="_blank"
               rel="noreferrer"
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors"
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
               aria-label="GitHub"
             >
               <GitHub size={20} />
@@ -28,14 +28,14 @@ const Footer = () => {
               href="https://linkedin.com/in/curtis-chen1/"
               target="_blank"
               rel="noreferrer"
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors"
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
             </a>
             <a
               href="mailto:curtischen1234@gmail.com"
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors"
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
               aria-label="Email"
             >
               <Mail size={20} />
@@ -44,16 +44,16 @@ const Footer = () => {
               href="https://curtischen03.github.io/personal-website"
               target="_blank"
               rel="noreferrer"
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors"
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
               aria-label="Website"
             >
               <ExternalLink size={20} />
             </a>
           </div>
         </div>
-        
+
         <hr className="border-gray-800 my-6" />
-        
+
         <div className="text-center text-gray-500 text-sm">
           &copy; {currentYear} Curtis Chen. All rights reserved.
         </div>
