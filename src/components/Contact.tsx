@@ -41,8 +41,8 @@ const Contact = () => {
             </h3>
             <p className="text-gray-700 dark:text-gray-300 mb-8">
               I'm always open to new opportunities, collaborations, or just a
-              friendly chat. Feel free to reach out using the form or through
-              any of the contact methods below.
+              friendly chat. Feel free to reach out through any of the contact
+              methods below.
             </p>
 
             <div className="space-y-4">

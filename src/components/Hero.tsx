@@ -89,13 +89,6 @@ const Hero = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:curtischen1234@gmail.com"
-                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
-                aria-label="Email"
-              >
-                <Mail size={24} />
-              </a>
-              <a
                 href={resume}
                 target="_blank"
                 rel="noreferrer"

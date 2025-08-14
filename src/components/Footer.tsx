@@ -1,4 +1,11 @@
-import { Github as GitHub, Linkedin, Mail, ExternalLink } from "lucide-react";
+import {
+  Github as GitHub,
+  Linkedin,
+  Mail,
+  FileText,
+  ExternalLink,
+} from "lucide-react";
+import resume from "../data/Curtis_Chen_2025_Resume_1.pdf";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -34,14 +41,16 @@ const Footer = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:curtischen1234@gmail.com"
+              href={resume}
+              target="_blank"
+              rel="noreferrer"
               className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
-              aria-label="Email"
+              aria-label="Resume"
             >
-              <Mail size={20} />
+              <FileText size={24} />
             </a>
             <a
-              href="https://curtischen03.github.io/personal-website"
+              href="https://curtischen03.github.io/Portfolio"
               target="_blank"
               rel="noreferrer"
               className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
