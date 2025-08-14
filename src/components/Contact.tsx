@@ -1,6 +1,6 @@
-import { useRef, useEffect, useState, FormEvent } from "react";
+import { useRef, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -30,7 +30,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-20 opacity-0 transform translate-y-10 transition-all duration-1000"
+      className="py-20 opacity-0 transform translate-y-10 transition-all duration-1000 bg-gradient-to-t from-blue-50/50 to-transparent dark:from-blue-950/10"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle>Contact Me</SectionTitle>
@@ -41,8 +41,8 @@ const Contact = () => {
             </h3>
             <p className="text-gray-700 dark:text-gray-300 mb-8">
               I'm always open to new opportunities, collaborations, or just a
-              friendly chat. Feel free to reach out using the form or through
-              any of the contact methods below.
+              friendly chat. Feel free to reach out through any of the contact
+              methods below.
             </p>
 
             <div className="space-y-4">
@@ -54,7 +54,7 @@ const Contact = () => {
                   </h4>
                   <a
                     href="mailto:curtischen1234@gmail.com"
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors underline-offset-4 hover:underline"
                   >
                     curtischen1234@gmail.com
                   </a>
@@ -69,7 +69,7 @@ const Contact = () => {
                   </h4>
                   <a
                     href="tel:+16263210852"
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors underline-offset-4 hover:underline"
                   >
                     +1 (626) 321-0852
                   </a>

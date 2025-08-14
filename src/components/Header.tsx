@@ -1,6 +1,6 @@
-import { useState, useContext } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
-import { ThemeContext } from '../contexts/ThemeContext';
+import { useState, useContext } from "react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -15,20 +15,20 @@ const Header = ({ isScrolled }: HeaderProps) => {
   };
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Home", href: "#home" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#skills" },
+    { name: "Education", href: "#education" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md'
-          : 'bg-transparent'
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md border-b border-gray-200 dark:border-gray-800"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,17 +46,17 @@ const Header = ({ isScrolled }: HeaderProps) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:underline underline-offset-4 decoration-2 decoration-blue-600 dark:decoration-blue-400 transition-colors duration-200"
               >
                 {link.name}
               </a>
             ))}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? (
+              {theme === "dark" ? (
                 <Sun size={20} className="text-yellow-400" />
               ) : (
                 <Moon size={20} className="text-gray-700" />
@@ -68,16 +68,19 @@ const Header = ({ isScrolled }: HeaderProps) => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleTheme}
-              className="p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? (
+              {theme === "dark" ? (
                 <Sun size={20} className="text-yellow-400" />
               ) : (
                 <Moon size={20} className="text-gray-700" />
               )}
             </button>
-            <button onClick={toggleMenu} className="text-gray-700 dark:text-gray-300">
+            <button
+              onClick={toggleMenu}
+              className="text-gray-700 dark:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 rounded"
+            >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>

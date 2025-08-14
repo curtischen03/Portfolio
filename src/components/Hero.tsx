@@ -33,7 +33,7 @@ const Hero = () => {
     <section
       id="home"
       ref={heroRef}
-      className="min-h-screen flex items-center opacity-0 transform translate-y-10 transition-all duration-1000"
+      className="min-h-screen flex items-center opacity-0 transform translate-y-10 transition-all duration-1000 bg-gradient-to-b from-blue-50/60 to-transparent dark:from-blue-950/20"
       style={{ paddingTop: "64px" }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -46,25 +46,24 @@ const Hero = () => {
               </span>
             </h1>
             <h2 className="text-2xl sm:text-3xl font-medium text-gray-700 dark:text-gray-300">
-              Computer Science Student & Software Engineer
+              Software and Machine Learning Engineer
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-              A passionate developer studying at UCLA with experience in web
-              development, machine learning, and software engineering. Currently
-              seeking new opportunities to apply my skills and continue growing
-              as a developer.
+              A passionate developer with experience in web development, machine
+              learning, and software engineering. Currently pursuing a Masters
+              of Engineering Degree, specializing in AI, at UCLA.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <a
                 href="#contact"
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-md hover:shadow-lg"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-md hover:shadow-lg shadow-blue-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
               >
                 Contact Me
               </a>
               <a
                 href="#projects"
-                className="px-6 py-3 bg-transparent border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+                className="px-6 py-3 bg-transparent border border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
               >
                 View Projects
               </a>
@@ -75,7 +74,7 @@ const Hero = () => {
                 href="https://github.com/curtischen03"
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
                 aria-label="GitHub"
               >
                 <GitHub size={24} />
@@ -84,23 +83,16 @@ const Hero = () => {
                 href="https://linkedin.com/in/curtis-chen1/"
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:curtischen1234@gmail.com"
-                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
-                aria-label="Email"
-              >
-                <Mail size={24} />
-              </a>
-              <a
                 href={resume}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
                 aria-label="Resume"
               >
                 <FileText size={24} />
