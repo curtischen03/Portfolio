@@ -45,7 +45,7 @@ export const experienceData = [
     period: "August 2023 - September 2023",
     responsibilities: [
       "Automated workflows for 50% of patient records, increasing efficiency by 25%.",
-      "Provided IT support by conducting software updates and troubleshooting for over 20+ machines weekly",
+      "Provided IT support by conducting software updates and troubleshooting for over 20+ machines weekly.",
     ],
   },
 ];
@@ -69,7 +69,7 @@ export const projectsData = [
     technologies: ["Java", "CI/CD (Gradle)"],
     description: "Engineered a compiler translating Java code to RISC-V assembly, implementing parsing, type checking, and register allocation to improve execution efficiency by 40%.",
     imageUrl: "https://images.pexels.com/photos/6424586/pexels-photo-6424586.jpeg",
-  }
+  },
   {
     id: "proj6",
     title: "QuizAI – AI-Generated Quiz Platform",
