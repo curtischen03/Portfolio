@@ -51,7 +51,8 @@ const Hero = () => {
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
               A passionate developer with experience in web development, machine
               learning, and software engineering. Currently pursuing a Masters
-              of Engineering Degree, specializing in AI, at UCLA.
+              of Engineering Degree, specializing in AI, at UCLA. Working as a fullstack
+              engineer at Koios Enterprises, in charge of the video streaming services.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
