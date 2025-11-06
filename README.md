@@ -22,7 +22,8 @@ Make sure you have **Node.js** and **npm** installed on your machine.
 3. Start the development server:
 
    ```bash
-   npm run dev
+   npm run build
+   npm run preview
    ```
 
 ## 🛠 Built With
