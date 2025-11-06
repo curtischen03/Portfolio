@@ -1,30 +1,40 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Skills from "./components/Skills";
-import Education from "./components/Education";
-import Certifications from "./components/Certifications";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
+
+const Experience = lazy(() => import("./components/Experience"));
+const Projects = lazy(() => import("./components/Projects"));
+const Skills = lazy(() => import("./components/Skills"));
+const Education = lazy(() => import("./components/Education"));
+const Certifications = lazy(() => import("./components/Certifications"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
+const ScrollToTop = lazy(() => import("./components/ScrollToTop"));
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const rafId = useRef<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current);
       }
+      
+      rafId.current = requestAnimationFrame(() => {
+        const scrolled = window.scrollY > 10;
+        setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
   }, []);
 
   return (
@@ -33,15 +43,19 @@ function App() {
         <Header isScrolled={isScrolled} />
         <main>
           <Hero />
-          <Experience />
-          <Projects />
-          <Skills />
-          <Education />
-          <Certifications />
-          <Contact />
+          <Suspense fallback={<div className="h-screen" />}>
+            <Experience />
+            <Projects />
+            <Skills />
+            <Education />
+            <Certifications />
+            <Contact />
+          </Suspense>
         </main>
-        <Footer />
-        <ScrollToTop />
+        <Suspense fallback={null}>
+          <Footer />
+          <ScrollToTop />
+        </Suspense>
       </div>
     </ThemeProvider>
   );

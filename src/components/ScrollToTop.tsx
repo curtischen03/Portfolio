@@ -1,20 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronUp } from "lucide-react";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const rafId = useRef<number | null>(null);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 500) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current);
       }
+      
+      rafId.current = requestAnimationFrame(() => {
+        const visible = window.scrollY > 500;
+        setIsVisible((prev) => (prev !== visible ? visible : prev));
+      });
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
   }, []);
 
   const scrollToTop = () => {
