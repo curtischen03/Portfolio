@@ -9,10 +9,25 @@
       content="Curtis Chen - Computer Science Student & Software Engineer. Portfolio showcasing projects, skills, and professional experience."
     />
     <title>Curtis Chen | Portfolio</title>
-    <script type="module" crossorigin src="/Portfolio/assets/index-BDkWQ_iz.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-AB0vh2r5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://images.pexels.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.pexels.com" />
+    <script>
+      // Apply theme immediately to prevent flash
+      (function() {
+        const theme = localStorage.getItem('theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/Portfolio/assets/index-BoZNWBTM.js"></script>
+    <link rel="modulepreload" crossorigin href="/Portfolio/assets/vendor-C5_C4QSf.js">
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-BsXhaf7-.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
   </body>
 </html>
