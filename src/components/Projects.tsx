@@ -1,39 +1,25 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { projectsData } from "../data/resumeData";
 import SectionTitle from "./SectionTitle";
 import { ExternalLink, Github } from "lucide-react";
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);
+  const [imageLoaded, setImageLoaded] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-fade-in");
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
+    requestAnimationFrame(() => {
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+        sectionRef.current.classList.add("animate-fade-in");
       }
-    };
+    });
   }, []);
 
   return (
     <section
       id="projects"
       ref={sectionRef}
-      className="py-20 bg-gray-50 dark:bg-gray-700/30 opacity-0 transform translate-y-10 transition-all duration-1000"
+      className="py-20 bg-gray-50 dark:bg-gray-700/30"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle>Projects</SectionTitle>
@@ -44,19 +30,25 @@ const Projects = () => {
               key={project.id}
               className="rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-white dark:bg-gray-700 overflow-hidden border border-gray-200 dark:border-gray-600 h-full hover:-translate-y-1"
             >
-              <div
-                className="h-48 relative overflow-hidden"
-                style={{
-                  backgroundImage: `url(${project.imageUrl})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
+              <div className="h-48 relative overflow-hidden bg-gray-200 dark:bg-gray-600">
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+                    imageLoaded[project.id] ? "opacity-100" : "opacity-0"
+                  }`}
+                  onLoad={() => setImageLoaded((prev) => ({ ...prev, [project.id]: true }))}
+                />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/20 flex items-center justify-center">
                   <h3 className="text-xl font-bold text-white px-4 py-2 rounded-md backdrop-blur-sm bg-black/30">
                     {project.title}
                   </h3>
                 </div>
+                {!imageLoaded[project.id] && (
+                  <div className="absolute inset-0 bg-gray-300 dark:bg-gray-600 animate-pulse" />
+                )}
               </div>
 
               <div className="p-6">

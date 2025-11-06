@@ -1,39 +1,31 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Github as GitHub, Linkedin, Mail, FileText } from "lucide-react";
 import profilePic from "../data/curtis_chen_pic.png";
-import resume from "../data/Curtis_Chen_2025_Resume_1.pdf";
 
 const Hero = () => {
+  const [resume, setResume] = useState<string | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate-fade-in");
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
+    import("../data/Curtis_Chen_2025_Resume_1.pdf").then((module) => {
+      setResume(module.default);
+    });
+  }, []);
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => {
+  useEffect(() => {
+    // Trigger animation on mount using requestAnimationFrame for smooth transition
+    requestAnimationFrame(() => {
       if (heroRef.current) {
-        observer.unobserve(heroRef.current);
+        heroRef.current.classList.add("animate-fade-in");
       }
-    };
+    });
   }, []);
 
   return (
     <section
       id="home"
       ref={heroRef}
-      className="min-h-screen flex items-center opacity-0 transform translate-y-10 transition-all duration-1000 bg-gradient-to-b from-blue-50/60 to-transparent dark:from-blue-950/20"
+      className="min-h-screen flex items-center bg-gradient-to-b from-blue-50/60 to-transparent dark:from-blue-950/20"
       style={{ paddingTop: "64px" }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -89,15 +81,17 @@ const Hero = () => {
               >
                 <Linkedin size={24} />
               </a>
-              <a
-                href={resume}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
-                aria-label="Resume"
-              >
-                <FileText size={24} />
-              </a>
+              {resume && (
+                <a
+                  href={resume}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+                  aria-label="Resume"
+                >
+                  <FileText size={24} />
+                </a>
+              )}
             </div>
           </div>
 
@@ -108,6 +102,8 @@ const Hero = () => {
                   src={profilePic}
                   alt="Profile"
                   className="w-full h-full object-cover"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-600/10 to-transparent"></div>
