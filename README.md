@@ -3,7 +3,7 @@
 A personal portfolio website built with **TypeScript** and **Tailwind CSS**.  
 This project showcases my skills, projects, and experience in a modern, responsive design.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -31,7 +31,7 @@ Make sure you have **Node.js** and **npm** installed on your machine.
 - **TypeScript** – Strongly typed JavaScript for better developer experience.
 - **Tailwind CSS** – A utility-first CSS framework for rapid UI development.
 
-## ✨ Features
+## Features
 
 - Fully responsive design
 - Dark mode support
