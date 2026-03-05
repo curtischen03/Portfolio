@@ -26,7 +26,7 @@ Make sure you have **Node.js** and **npm** installed on your machine.
    npm run preview
    ```
 
-## 🛠 Built With
+## Built With
 
 - **TypeScript** – Strongly typed JavaScript for better developer experience.
 - **Tailwind CSS** – A utility-first CSS framework for rapid UI development.
